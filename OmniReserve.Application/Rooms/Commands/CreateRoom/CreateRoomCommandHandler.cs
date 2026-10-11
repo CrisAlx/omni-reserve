@@ -7,7 +7,8 @@ public class CreateRoomCommandHandler : IRequestHandler<CreateRoomCommand, Guid>
 {
     public Task<Guid> Handle(CreateRoomCommand request, CancellationToken cancellationToken)
     {
-        var room = new Room(request.RoomNumber, request.Type, request.PricePerNight);
+        var room = new OmniReserve.Domain.Entities.Room(request.RoomNumber, request.Type, request.PricePerNight);
+        
         return Task.FromResult(room.Id);
     }
 }
