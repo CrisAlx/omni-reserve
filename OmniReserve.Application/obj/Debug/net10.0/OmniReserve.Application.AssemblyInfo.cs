@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OmniReserve.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f98fbec4fd5cfd64d26b0a4a25da2b1ee5f7e9bc")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5fd9d6d0623a3959fd306c7cf1d4a5a2862fd06a")]
 [assembly: System.Reflection.AssemblyProductAttribute("OmniReserve.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OmniReserve.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
