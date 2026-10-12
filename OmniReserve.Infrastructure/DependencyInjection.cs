@@ -1,16 +1,18 @@
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using OmniReserve.Application.Common.Interfaces;
-using OmniReserve.Infrastructure.Persistence.Repositories;
+using OmniReserve.Infrastructure.Persistence;
 
-namespace OmniReserve.Infrastructure;
-
-public static class DependencyInjection
+namespace OmniReserve.Infrastructure
 {
-    public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
+    public static class DependencyInjection
     {
-        services.AddScoped<IRoomRepository, RoomRepository>();
+        public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
+        {
+            services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseNpgsql(configuration.GetConnectionString("DefaultConnection")));
 
-        return services;
+            return services;
+        }
     }
 }

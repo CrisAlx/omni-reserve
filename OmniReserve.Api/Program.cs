@@ -1,19 +1,22 @@
-using OmniReserve.Api.Middlewares;
+using OmniReserve.Infrastructure;
 using OmniReserve.Application;
+using Microsoft.EntityFrameworkCore;
+using OmniReserve.Infrastructure.Persistence;
+
+using OmniReserve.Infrastructure;
+
 using OmniReserve.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Registrar infraestructura y la cadena de conexión
+builder.Services.AddInfrastructure(builder.Configuration);
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddApplication();
-builder.Services.AddInfrastructure(builder.Configuration);
-
 var app = builder.Build();
-
-app.UseMiddleware<GlobalExceptionHandlingMiddleware>();
 
 if (app.Environment.IsDevelopment())
 {
@@ -22,9 +25,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
 app.UseAuthorization();
-
 app.MapControllers();
 
 app.Run();
