@@ -3,9 +3,9 @@ using OmniReserve.Domain.Entities;
 
 namespace OmniReserve.Infrastructure.Persistence.Repositories;
 
-public class RoomRepository 
+public class RoomRepository : IRoomRepository
 {
-    private readonly Dictionary<Guid, Room> _rooms = new(); 
+    private static readonly Dictionary<Guid, Room> _rooms = new();
 
     public Task AddAsync(Room room)
     {
