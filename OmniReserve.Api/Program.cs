@@ -1,3 +1,4 @@
+using OmniReserve.Api.Middlewares;
 using OmniReserve.Application;
 using OmniReserve.Infrastructure;
 
@@ -8,9 +9,11 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddApplication();
-builder.Services.AddInfrastructure(builder.Configuration);
+builder.Services.AddInfrastructure();
 
 var app = builder.Build();
+
+app.UseMiddleware<GlobalExceptionHandlingMiddleware>();
 
 if (app.Environment.IsDevelopment())
 {
