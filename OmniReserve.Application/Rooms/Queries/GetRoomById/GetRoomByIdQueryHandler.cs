@@ -7,7 +7,6 @@ public class GetRoomByIdQueryHandler : IRequestHandler<GetRoomByIdQuery, RoomRes
 {
     public Task<RoomResponseDto> Handle(GetRoomByIdQuery request, CancellationToken cancellationToken)
     {
-        // Simulando que obtenemos los datos de la base de datos
         var response = new RoomResponseDto(
             request.RoomId,
             "101",
