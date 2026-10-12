@@ -14,3 +14,5 @@ C:\Users\CRIST\OneDrive\Desktop\omni-reserve\OmniReserve.Infrastructure\obj\Debu
 C:\Users\CRIST\OneDrive\Desktop\omni-reserve\OmniReserve.Infrastructure\obj\Debug\net10.0\refint\OmniReserve.Infrastructure.dll
 C:\Users\CRIST\OneDrive\Desktop\omni-reserve\OmniReserve.Infrastructure\obj\Debug\net10.0\OmniReserve.Infrastructure.pdb
 C:\Users\CRIST\OneDrive\Desktop\omni-reserve\OmniReserve.Infrastructure\obj\Debug\net10.0\ref\OmniReserve.Infrastructure.dll
+C:\Users\CRIST\OneDrive\Desktop\omni-reserve\OmniReserve.Infrastructure\bin\Debug\net10.0\OmniReserve.Application.dll
+C:\Users\CRIST\OneDrive\Desktop\omni-reserve\OmniReserve.Infrastructure\bin\Debug\net10.0\OmniReserve.Application.pdb
