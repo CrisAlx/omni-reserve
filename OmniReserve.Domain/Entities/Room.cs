@@ -5,27 +5,29 @@ namespace OmniReserve.Domain.Entities;
 public class Room
 {
     public Guid Id { get; private set; }
-    public string RoomNumber { get; private set; }
+    public string RoomNumber { get; private set; } = string.Empty;
     public RoomType Type { get; private set; }
     public decimal PricePerNight { get; private set; }
     public bool IsAvailable { get; private set; }
 
-    public Room(string roomNumber, RoomType type, decimal pricePerNight)
+    private Room() { }
+
+    private Room(string roomNumber, RoomType type, decimal pricePerNight)
     {
         Id = Guid.NewGuid();
-        RoomNumber = !string.IsNullOrWhiteSpace(roomNumber) ? roomNumber : throw new ArgumentNullException(nameof(roomNumber));
+        RoomNumber = roomNumber;
         Type = type;
         PricePerNight = pricePerNight;
         IsAvailable = true;
     }
 
-    public void MarkAsUnavailable()
+    public static Room Create(string roomNumber, RoomType type, decimal pricePerNight)
     {
-        IsAvailable = false;
-    }
+        if (pricePerNight <= 0)
+        {
+            throw new Exception("El precio por noche debe ser mayor a cero.");
+        }
 
-    public void MarkAsAvailable()
-    {
-        IsAvailable = true;
+        return new Room(roomNumber, type, pricePerNight);
     }
 }
