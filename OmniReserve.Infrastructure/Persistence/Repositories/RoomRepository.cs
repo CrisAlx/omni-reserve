@@ -5,17 +5,17 @@ namespace OmniReserve.Infrastructure.Persistence.Repositories;
 
 public class RoomRepository : IRoomRepository
 {
-    private static readonly Dictionary<Guid, Room> _rooms = new();
+    private readonly Dictionary<Guid, Room> _rooms = new();
 
-    public Task AddAsync(Room room)
+    public async Task AddAsync(Room room)
     {
         _rooms[room.Id] = room;
-        return Task.CompletedTask;
+ 
     }
 
-    public Task<Room?> GetByIdAsync(Guid id)
+    public async Task<Room?> GetByIdAsync(Guid id)
     {
         _rooms.TryGetValue(id, out var room);
-        return Task.FromResult(room);
+        return room;
     }
 }
