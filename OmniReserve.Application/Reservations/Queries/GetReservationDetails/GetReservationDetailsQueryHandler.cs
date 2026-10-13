@@ -24,8 +24,7 @@ public class GetReservationDetailsQueryHandler : IRequestHandler<GetReservationD
         return new ReservationDetailsDto
         {
             Id = reservation.Id,
-            UserEmail = reservation.User.Email,
-            RoomNumber = reservation.Room.RoomNumber,
+            UserEmail = reservation.User.Email.Value,
             StartDate = reservation.CheckInDate,
             EndDate = reservation.CheckOutDate
         };
