@@ -15,7 +15,19 @@ public class GetReservationDetailsQueryHandler : IRequestHandler<GetReservationD
     public async Task<ReservationDetailsDto> Handle(GetReservationDetailsQuery request, CancellationToken cancellationToken)
     {
         var reservation = await _reservationRepository.GetReservationWithDetailsAsync(request.ReservationId);
-        
-        return null!;
+
+        if (reservation == null)
+        {
+            throw new Exception($"La reservación con ID {request.ReservationId} no fue encontrada.");
+        }
+
+        return new ReservationDetailsDto
+        {
+            Id = reservation.Id,
+            UserEmail = reservation.User.Email,
+            RoomNumber = reservation.Room.RoomNumber,
+            StartDate = reservation.CheckInDate,
+            EndDate = reservation.CheckOutDate
+        };
     }
 }
