@@ -2,6 +2,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using OmniReserve.Infrastructure.Persistence;
+using OmniReserve.Application.Common.Interfaces; 
+using OmniReserve.Infrastructure.Security;      
 
 namespace OmniReserve.Infrastructure
 {

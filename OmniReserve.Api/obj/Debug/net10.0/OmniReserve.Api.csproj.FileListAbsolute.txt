@@ -179,3 +179,4 @@ C:\Users\CRIST\OneDrive\Desktop\omni-reserve\OmniReserve.Api\obj\Debug\net10.0\r
 C:\Users\CRIST\OneDrive\Desktop\omni-reserve\OmniReserve.Api\obj\Debug\net10.0\OmniReserve.Api.pdb
 C:\Users\CRIST\OneDrive\Desktop\omni-reserve\OmniReserve.Api\obj\Debug\net10.0\OmniReserve.Api.genruntimeconfig.cache
 C:\Users\CRIST\OneDrive\Desktop\omni-reserve\OmniReserve.Api\obj\Debug\net10.0\ref\OmniReserve.Api.dll
+C:\Users\CRIST\OneDrive\Desktop\omni-reserve\OmniReserve.Api\bin\Debug\net10.0\BCrypt-Net-Next.dll

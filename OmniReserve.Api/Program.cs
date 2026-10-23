@@ -3,13 +3,8 @@ using OmniReserve.Application;
 using Microsoft.EntityFrameworkCore;
 using OmniReserve.Infrastructure.Persistence;
 
-using OmniReserve.Infrastructure;
-
-using OmniReserve.Infrastructure;
-
 var builder = WebApplication.CreateBuilder(args);
 
-// Registrar infraestructura y la cadena de conexión
 builder.Services.AddInfrastructure(builder.Configuration);
 
 builder.Services.AddControllers();
