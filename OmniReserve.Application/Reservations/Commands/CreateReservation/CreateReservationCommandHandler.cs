@@ -27,6 +27,7 @@ public class CreateReservationCommandHandler : IRequestHandler<CreateReservation
             throw new InvalidOperationException("La habitación seleccionada ya está ocupada en el rango de fechas solicitado.");
         }
 
+        // 2. Instanciar la entidad de dominio Reservation
         var reservation = new Reservation(
             request.RoomId,
             request.UserId,
@@ -35,6 +36,7 @@ public class CreateReservationCommandHandler : IRequestHandler<CreateReservation
             request.TotalPrice
         );
 
+        // 3. Registrar la reservación a través del repositorio
         await _reservationRepository.AddAsync(reservation);
 
         return reservation.Id;
