@@ -15,12 +15,27 @@ public class CreateReservationCommandHandler : IRequestHandler<CreateReservation
 
     public async Task<Guid> Handle(CreateReservationCommand request, CancellationToken cancellationToken)
     {
+        // 1. Validar la disponibilidad de la habitación
+        bool isAvailable = await _reservationRepository.IsRoomAvailableAsync(
+            request.RoomId, 
+            request.StartDate, 
+            request.EndDate
+        );
+
+        if (!isAvailable)
+        {
+            throw new InvalidOperationException("La habitación seleccionada ya está ocupada en el rango de fechas solicitado.");
+        }
+
         var reservation = new Reservation(
             request.RoomId,
             request.UserId,
             request.StartDate,
-            request.EndDate
+            request.EndDate,
+            request.TotalPrice
         );
+
+        await _reservationRepository.AddAsync(reservation);
 
         return reservation.Id;
     }

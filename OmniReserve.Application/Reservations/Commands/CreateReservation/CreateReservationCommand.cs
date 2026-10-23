@@ -6,5 +6,6 @@ public record CreateReservationCommand(
     Guid RoomId,
     Guid UserId,
     DateTime StartDate,
-    DateTime EndDate
+    DateTime EndDate,
+    decimal TotalPrice
 ) : IRequest<Guid>;

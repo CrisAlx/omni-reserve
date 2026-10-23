@@ -29,4 +29,10 @@ public class ReservationRepository : IReservationRepository
 
         return !hasConflict;
     }
+
+    public async Task AddAsync(Reservation reservation)
+    {
+        await _context.Reservations.AddAsync(reservation);
+        await _context.SaveChangesAsync();
+    }
 }
